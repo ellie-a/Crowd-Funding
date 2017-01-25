@@ -1,0 +1,10 @@
+{
+  "projects": [{
+      "name": "FDR Skatepark",
+      "managers": ["Andrew Metzger"],
+      "description": "FDR is one of the largest DIY skateparks in the world, built for skateboarders by skateboarders.",
+      "target": 20000,
+      "details": "We're all coming together to help maintain the park from one of the harshest winters we've seen in a while. We're fixing up damaged concrete, filling in cracks and potholes, repainting the whole park, and fixing/replacing some of the pool coping. All extra money will go towards the new bowl being built next to the vert ramp. Every dollar counts! Thanks for your support!",
+      "swag": ["Free skate deck"]
+    }]
+}
