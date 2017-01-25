@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
-import { FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-welcome',
@@ -11,7 +12,7 @@ import { FirebaseListObservable } from 'angularfire2';
 })
 export class WelcomeComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService, private router: Router) {
   }
 
   ngOnInit() {
@@ -19,4 +20,7 @@ export class WelcomeComponent implements OnInit {
     console.log(this.projects);
   }
 
+  navigateTo(project) {
+    this.router.navigate(['projects', project.$key]);
+  }
 }
