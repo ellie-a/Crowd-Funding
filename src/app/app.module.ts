@@ -11,6 +11,9 @@ import { AngularFireModule } from 'angularfire2';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { AboutComponent } from './about/about.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { ProjectTileComponent } from './project-tile/project-tile.component';
+import { PriorityPipe } from './priority.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -25,7 +28,10 @@ export const firebaseConfig = {
     WelcomeComponent,
     ProjectDetailsComponent,
     NewProjectComponent,
-    AboutComponent
+    AboutComponent,
+    ProjectListComponent,
+    ProjectTileComponent,
+    PriorityPipe
   ],
   imports: [
     BrowserModule,

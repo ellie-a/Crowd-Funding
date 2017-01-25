@@ -1,0 +1,9 @@
+<div class="col s12">
+  <div class="card project-card" (click)="navigateTo(project)">
+    <div class="card-content">
+      <h4 class="card-title">{{project.name}}<span class="right">Target: $ {{project.target}}</span></h4>
+      <p>Managers: <span *ngFor="let manager of project.managers">{{manager}} </span></p>
+      <p>{{project.description}}</p>
+    </div>
+  </div>
+</div>
