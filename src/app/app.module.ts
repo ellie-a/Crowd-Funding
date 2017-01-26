@@ -14,6 +14,8 @@ import { AboutComponent } from './about/about.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectTileComponent } from './project-tile/project-tile.component';
 import { PriorityPipe } from './priority.pipe';
+import { SearchPipe } from './search.pipe';
+import { searchFilter } from './searchFilter';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +33,8 @@ export const firebaseConfig = {
     AboutComponent,
     ProjectListComponent,
     ProjectTileComponent,
-    PriorityPipe
+    PriorityPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
