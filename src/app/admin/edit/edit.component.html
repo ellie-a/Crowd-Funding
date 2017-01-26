@@ -1,0 +1,39 @@
+<div class="col s8">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input [(ngModel)]="selectedProject.name" name="name" type="text" >
+      </div>
+      <div class="input-field col s6">
+        <input [(ngModel)]="selectedProject.target" type="number" name="target" >
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6" *ngFor="let manager of selectedProject.managers; let i = index">
+        <input [(ngModel)]="selectedProject.managers[i]" type="text" name="manager">
+      </div>
+      <div class="input-field col s12">
+        <input [(ngModel)]="selectedProject.description" type="text" name="description">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col12">
+        <textarea [(ngModel)]="selectedProject.details" class="materialize-textarea" name="details"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col12"  *ngFor="let swag of selectedProject.swag; let k = index">
+        <input [(ngModel)]="selectedProject.swag[k]" name="swag">
+      </div>
+      <div class="row">
+        <div class="input-field col12">
+          <input [(ngModel)]="selectedProject.priority" name="priority">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="col s4">
+  <i class="material-icons right admin-buttons red-text text-darken-3" (click)="deleteProject(project)" >delete</i>
+  <i class="material-icons right admin-buttons green-text text-darken-3" (click)="editSelectedProject(project)">mode_edit</i>
+</div>

@@ -19,4 +19,20 @@ export class ProjectService {
   addProject(newProject: Project) {
     this.projects.push(newProject);
   }
+
+  updateProject(localUpdateProject){
+    var projectEntryInFirebase = this.getProjectById(localUpdateProject.$key);
+    projectEntryInFirebase.update({name: localUpdateProject.name,
+                                  managers: localUpdateProject.managers,
+                                  description: localUpdateProject.description,
+                                  target: localUpdateProject.target,
+                                  details: localUpdateProject.details,
+                                  swag: localUpdateProject.swag,
+                                  priority: localUpdateProject.priority,
+                                  edit: false})
+  }
+
+  delete(projectToDelete) {
+    this.getProjectById(projectToDelete.$key).remove();
+  }
 }

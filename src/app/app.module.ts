@@ -15,6 +15,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectTileComponent } from './project-tile/project-tile.component';
 import { PriorityPipe } from './priority.pipe';
 import { SearchPipe } from './search.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { EditComponent } from './admin/edit/edit.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -33,7 +35,9 @@ export const firebaseConfig = {
     ProjectListComponent,
     ProjectTileComponent,
     PriorityPipe,
-    SearchPipe
+    SearchPipe,
+    AdminComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

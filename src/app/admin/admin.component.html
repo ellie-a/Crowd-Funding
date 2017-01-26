@@ -1,0 +1,19 @@
+<div *ngFor="let project of projects | async">
+  <div class="col l6">
+    <div class="card project-card">
+      <div class="card-content row" *ngIf="!project.edit" >
+        <div class="col s8">
+          <h4 class="card-title">{{project.name}}</h4>
+          <p>Managers: <span *ngFor="let manager of project.managers">{{manager}} </span></p>
+        </div>
+        <div class="col s4">
+          <i class="material-icons right admin-buttons red-text text-darken-3" (click)="deleteProject(project)" >delete</i>
+          <i class="material-icons right admin-buttons green-text text-darken-3" (click)="editSelectedProject(project)">mode_edit</i>
+        </div>
+      </div>
+      <div class="card-content row" *ngIf="project.edit">
+        <app-edit [selectedProject]="project"></app-edit>
+      </div>
+    </div>
+  </div>
+</div>
