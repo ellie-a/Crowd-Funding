@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  // clearSearch() {
-  //   this.searchFilter = "";
+  // clearSearch(search) {
+  //   search.value = "";
   // }
 
   searchForProject(search: string): void{

@@ -22,6 +22,7 @@ export class EditComponent implements OnInit {
   }
 
   editSelectedProject(){
+    this.selectedProject.edit = false;
     this.projectService.updateProject(this.selectedProject);
   }
 }

@@ -19,16 +19,14 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.projects = this.projectService.getProjects();
   }
+
   deleteProject(project) {
     this.projectService.delete(project);
   }
 
   editSelectedProject(project: any){
-    if (project.edit) {
-      project.edit = false;
-    } else if (!project.edit) {
-      project.edit = true;
-    }
+    this.projectService.hideAllEditComponents();
+    project.edit = true;
   }
 
 }

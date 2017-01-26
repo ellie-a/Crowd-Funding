@@ -29,7 +29,17 @@ export class ProjectService {
                                   details: localUpdateProject.details,
                                   swag: localUpdateProject.swag,
                                   priority: localUpdateProject.priority,
-                                  edit: false})
+                                  edit: localUpdateProject.edit})
+  }
+
+  hideAllEditComponents(){
+    var instance = this;
+    this.projects.forEach(function(projectArray){
+      projectArray.forEach(function(project){
+        project.edit = false;
+        instance.updateProject(project);
+      })
+    })
   }
 
   delete(projectToDelete) {
