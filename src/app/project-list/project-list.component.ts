@@ -14,7 +14,7 @@ import { SearchFilterService } from '../search-filter.service';
 })
 export class ProjectListComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
-  searchFilter: string = "skate";
+  searchFilter: string = "";
   constructor(private projectService: ProjectService, private searchFilterService: SearchFilterService, private router: Router) {
   }
 

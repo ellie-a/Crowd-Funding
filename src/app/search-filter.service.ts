@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { searchFilter } from './searchFilter';
 
 @Injectable()
 export class SearchFilterService {
+  public searchFilter: String;
 
-  constructor() { }
+  constructor() {this.searchFilter = ""}
 
   getSearchFilter() {
-    return searchFilter;
+    return this.searchFilter;
+  }
+  setSearchFilter(search: string) {
+    this.searchFilter = search;
   }
 }
