@@ -20,6 +20,7 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectService.getProjects();
-    this.searchFilter = this.searchFilterService.getSearchFilter();
+    this.searchFilter = this.searchFilterService.getSearchFilter().search;
+    console.log(this.searchFilter);
   }
 }

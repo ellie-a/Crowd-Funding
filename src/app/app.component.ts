@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { SearchFilterService } from './search-filter.service';
 import { FormsModule }  from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,18 @@ import { FormsModule }  from '@angular/forms';
   providers: [SearchFilterService]
 })
 export class AppComponent implements OnInit {
-
-  searchFilter: string = "";
-  constructor(private searchFilterService: SearchFilterService){}
+  constructor(private searchFilterService: SearchFilterService, private router: Router){}
 
   ngOnInit() {
-    this.searchFilter = this.searchFilterService.getSearchFilter();
   }
 
-  clearSearch() {
-    this.searchFilter = "";
+  // clearSearch() {
+  //   this.searchFilter = "";
+  // }
+
+  searchForProject(search: string): void{
+    this.searchFilterService.getSearchFilter().search = search;
+    console.log(this.searchFilterService.getSearchFilter());
+    this.router.navigate(['projects']);
   }
 }

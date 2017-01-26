@@ -1,1 +1,1 @@
-export var searchFilter: string = "";
+export var searchFilter = {search: ""};

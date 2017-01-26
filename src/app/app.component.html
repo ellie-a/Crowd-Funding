@@ -12,11 +12,12 @@
       </ul>
       <form class="left">
         <div class="input-field">
-          <input type="search" name="search" [(ngModel)]="searchFilter" placeholder="Search for project" required>
+          <input type="search" #search placeholder="Search for project" required>
           <label for="search"><i class="material-icons">search</i></label>
           <i class="material-icons" (click)="clearSearch()">close</i>
         </div>
       </form>
+      <button class="btn" name="search" (click)="searchForProject(search.value)">Search</button>
     </div>
   </nav>
 </div>
