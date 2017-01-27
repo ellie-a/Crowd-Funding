@@ -29,4 +29,9 @@ export class AdminComponent implements OnInit {
     project.edit = true;
   }
 
+
+  navigateTo(project) {
+    this.router.navigate(["projects", project]);
+  }
+
 }

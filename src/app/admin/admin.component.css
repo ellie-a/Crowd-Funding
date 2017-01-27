@@ -1,3 +1,7 @@
-.admin-buttons {
+.admin-buttons, .card-title {
   cursor: pointer;
+}
+
+.card-title:hover {
+  color: teal;
 }

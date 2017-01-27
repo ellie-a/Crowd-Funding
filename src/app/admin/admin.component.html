@@ -3,7 +3,7 @@
     <div class="card project-card">
       <div class="card-content row" *ngIf="!project.edit" >
         <div class="col s8">
-          <h4 class="card-title">{{project.name}}</h4>
+          <h4 class="card-title" (click)="navigateTo(project.$key)">{{project.name}}</h4>
           <p>Managers: <span *ngFor="let manager of project.managers">{{manager}} </span></p>
         </div>
         <div class="col s4">
