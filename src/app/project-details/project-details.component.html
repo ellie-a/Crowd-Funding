@@ -1,3 +1,27 @@
-<p>
-  {{(projectToDisplay | async)?.name}}
-</p>
+<div class="row">
+  <div class="col s12">
+    <h3>{{projectToDisplay?.name}}</h3>
+    <p>Managers: <span *ngFor="let manager of projectToDisplay?.managers">{{manager}} </span></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m7 l7">
+    <h5>{{projectToDisplay?.description}}</h5>
+    <p>{{projectToDisplay?.details}}</p>
+  </div>
+  <div class="col s12 m5 l5">
+    <div class="progress">
+      <div class="determinate" [style.width.%]="projectToDisplay?.fundingPercent"></div>
+    </div>
+    <h5>$ {{projectToDisplay?.currentFunding}} out of $ {{projectToDisplay?.target}} </h5>
+    <div class="row">
+      <h5>
+        Fund:
+      </h5>
+      <button class="waves-effect waves-light btn" (click)="fundProject(20)">$20</button>
+      <button class="waves-effect waves-light btn" (click)="fundProject(100)">$100</button>
+      <button class="waves-effect waves-light btn" (click)="fundProject(500)">$500</button>
+      <button class="waves-effect waves-light btn" (click)="fundProject(1000)">$1000</button>
+    </div>
+  </div>
+</div>

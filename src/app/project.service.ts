@@ -29,7 +29,9 @@ export class ProjectService {
                                   details: localUpdateProject.details,
                                   swag: localUpdateProject.swag,
                                   priority: localUpdateProject.priority,
-                                  edit: localUpdateProject.edit})
+                                  edit: localUpdateProject.edit,
+                                  currentFunding: localUpdateProject.currentFunding,
+                                  fundingPercent: Math.floor((localUpdateProject.currentFunding / localUpdateProject.target) * 100)})
   }
 
   hideAllEditComponents(){

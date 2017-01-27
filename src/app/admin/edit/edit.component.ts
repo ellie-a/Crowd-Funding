@@ -14,7 +14,7 @@ export class EditComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    console.log(this.selectedProject);
+
   }
 
   deleteProject() {

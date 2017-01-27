@@ -12,6 +12,9 @@
       <div class="input-field col s6" *ngFor="let manager of selectedProject.managers; let i = index">
         <input [(ngModel)]="selectedProject.managers[i]" type="text" name="manager">
       </div>
+      <div class="input-field col s6">
+        <input type="number" name="currentFunding" [(ngModel)]="selectedProject.currentFunding">
+      </div>
       <div class="input-field col s12">
         <input [(ngModel)]="selectedProject.description" type="text" name="description">
       </div>

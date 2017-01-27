@@ -23,8 +23,15 @@ export class ProjectDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
-      this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+      this.projectService.getProjectById(this.projectId).subscribe(project => {
+        this.projectToDisplay = project;
+      });
     });
+  }
+
+  fundProject(fundAmount: number) {
+    this.projectToDisplay.currentFunding += fundAmount;
+    this.projectService.updateProject(this.projectToDisplay);
   }
 
 }
